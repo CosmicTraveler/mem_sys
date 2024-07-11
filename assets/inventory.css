@@ -1,0 +1,38 @@
+.modal {
+    display: none;
+}
+
+.modal.show {
+    display: flex;
+}
+
+.character-card {
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.character-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 10px rgba(56, 189, 248, 0.7);
+}
+
+.character-card.selected {
+    border: 2px solid #38bdf8;
+    box-shadow: 0 0 10px #38bdf8, 0 0 40px #38bdf8, 0 0 80px #38bdf8;
+}
+
+.modal-header,
+.modal-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal-header {
+    border-bottom: 1px solid #4a5568;
+}
+
+.modal-footer {
+    border-top: 1px solid #4a5568;
+    padding-top: 1rem;
+}

@@ -1,0 +1,193 @@
+.draggable {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: grab;
+}
+
+.dock {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 10px;
+    padding: 10px 20px;
+    align-items: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s;
+    z-index: 1000;
+}
+
+.dock img {
+    width: 50px;
+    height: 50px;
+    transition: transform 0.3s;
+    position: relative;
+}
+
+.dock svg:hover {
+    transform: scale(1.2);
+    filter: drop-shadow(0px 0px 15px lightblue) invert(10%);
+}
+
+.dock-normal {
+
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 10px;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: auto;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s;
+
+    img {
+        width: 50px;
+        height: 50px;
+        transition: transform 0.3s;
+        position: relative;
+    }
+
+    svg:hover {
+        transform: scale(1.2);
+        filter: drop-shadow(0px 0px 15px lightblue) invert(10%);
+    }
+
+}
+
+.tooltip {
+    visibility: hidden;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px;
+    position: absolute;
+    z-index: 1;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+    opacity: 0;
+    transition: opacity 0.3s;
+    margin-bottom: 5px;
+}
+
+.nav-icons>div:hover .tooltip {
+    visibility: visible;
+    opacity: 1;
+}
+
+.user-info {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.user-info span {
+    display: flex;
+    gap: 10px;
+}
+
+.nav-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.package-card:hover {
+    background-color: #2d3748;
+}
+
+.package-card {
+    cursor: pointer;
+}
+
+.package-card.selected {
+    border: 2px solid #38bdf8;
+    /* Change to neon color */
+    box-shadow: 0 0 10px #38bdf8, 0 0 40px #38bdf8, 0 0 80px #38bdf8;
+    /* Neon glow effect */
+}
+
+#SendModal {
+
+    .character-card {
+        cursor: pointer;
+        transition: transform 0.2s, box-shadow 0.2s;
+        overflow: visible; /* Ensure the box-shadow can extend beyond the element */
+    }
+    
+    .character-card:hover {
+        transform: scale(1.05);
+        box-shadow: 0 0 10px rgba(56, 189, 248, 0.7);
+    }
+    
+    .character-card.selected {
+        border: 2px solid #38bdf8;
+        box-shadow: 0 0 10px #38bdf8, 0 0 40px #38bdf8, 0 0 80px #38bdf8;
+    }
+
+    .modal-header {
+        border-bottom: 1px solid #4a5568;
+    }
+}
+
+
+#shop-itemGrid,
+#inventory-itemGrid {
+    .item-div:hover {
+        background-color: #2d3748;
+
+        img {
+            transform: scale(1.05);
+        }
+    }
+}
+
+.scroll-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.div-item-grid {
+    height: 75%;
+}
+
+@media (max-width: 768px){
+    .div-item-grid {
+        height: 68%;
+    }
+}
+
+/* Add these styles to your existing CSS file */
+
+.item-div {
+    transition: transform 0.6s ease-in-out, opacity 0.6s ease-in-out;
+}
+
+.item-enter {
+    transform: scale(0.9);
+    opacity: 0;
+}
+
+.item-enter-active {
+    transform: scale(1);
+    opacity: 1;
+}
+
+.item-exit {
+    transform: scale(1);
+    opacity: 1;
+}
+
+.item-exit-active {
+    transform: scale(0.9);
+    opacity: 0;
+}
